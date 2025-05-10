@@ -1,19 +1,40 @@
-**/*.md
-**/.env
-.cache
-assets
+
+
+# ─── 1. ไม่ต้องการส่งโฟลเดอร์ dependencies ฝั่ง local ─────────
 node_modules
-packages/node-dev
-packages/**/node_modules
-packages/**/dist
-packages/**/.turbo
-packages/**/*.test.*
+# หากใช้ pnpm หรือ yarn ก็เพิ่ม
+.pnpm-store
+.yarn
+
+# ─── 2. ไฟล์ล็อก/เทมป์ ไม่จำเป็น ───────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+*.log
+logs/
+tmp/
+temp/
+.cache/
+
+# ─── 3. ไฟล์ระบบเวอร์ชันคอนโทรล และ Docker ────────────────────
 .git
-.github
-!.github/scripts
-*.tsbuildinfo
-packages/cli/dist/**/e2e.*
-docker/compose
-docker/**/Dockerfile
-.vscode
-cypress
+.gitignore
+Dockerfile
+.dockerignore
+
+# ─── 4. ไฟล์ environment/local settings ────────────────────────
+.env
+.env.*.local
+
+# ─── 5. ไฟล์เอกสาร/เทส/coverage ───────────────────────────────
+docs/
+documentation/
+coverage/
+test/
+tests/
+*.md
+
+# ─── 6. ไฟล์/โฟลเดอร์ IDE หรือ OS ──────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.DS_Store
